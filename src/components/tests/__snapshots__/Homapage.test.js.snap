@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Homepage > should render link if showLink prop is true 1`] = `
+<div
+  className="jumbotron"
+  style={
+    Object {
+      "backgroundColor": "#435234",
+      "color": "#435234",
+    }
+  }
+>
+  <h1>
+    My homepage!
+  </h1>
+  <p>
+    some description
+  </p>
+  <a
+    href="/homepages/1"
+    onClick={[Function]}
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      type="button"
+    >
+      Visit page
+    </button>
+  </a>
+</div>
+`;
+
+exports[`<Homepage > should render with all props 1`] = `
+<div
+  className="jumbotron"
+  style={
+    Object {
+      "backgroundColor": "#435234",
+      "color": "#435234",
+    }
+  }
+>
+  <h1>
+    My homepage!
+  </h1>
+  <p>
+    some description
+  </p>
+</div>
+`;
+
+exports[`<Homepage > should render without props 1`] = `
+<div
+  className="jumbotron"
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "color": undefined,
+    }
+  }
+>
+  <h1 />
+  <p />
+</div>
+`;
