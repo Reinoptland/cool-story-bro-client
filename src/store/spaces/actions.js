@@ -2,10 +2,16 @@ import { apiUrl, DEFAULT_PAGINATION_LIMIT } from "../../config/constants";
 import axios from "axios";
 
 export const FETCH_SPACES_SUCCESS = "FETCH_SPACES_SUCCESS";
+export const SPACE_DETAILS_FETCHED = "SPACE_DETAILS_FETCHED";
 
-export const fetchSpacesSuccess = spaces => ({
+export const fetchSpacesSuccess = (spaces) => ({
   type: FETCH_SPACES_SUCCESS,
   payload: spaces,
+});
+
+const spaceDetailsFetched = (space) => ({
+  type: SPACE_DETAILS_FETCHED,
+  payload: space,
 });
 
 export const fetchSpaces = () => {
@@ -17,6 +23,14 @@ export const fetchSpaces = () => {
 
     // console.log(response.data);
     dispatch(fetchSpacesSuccess(response.data.spaces.rows));
+  };
+};
+
+export const fetchSpaceById = (id) => {
+  return async (dispatch, getState) => {
+    const response = await axios.get(`${apiUrl}/spaces/${id}`);
+    console.log(response);
+    dispatch(spaceDetailsFetched(response.data.space));
   };
 };
 
