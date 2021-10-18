@@ -6,7 +6,7 @@ const initialState = { allSpaces: [], spaceDetails: null };
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_SPACES_SUCCESS:
-      return { ...state, allSpaces: [...action.payload] };
+      return { ...state, allSpaces: [...state.allSpaces, ...action.payload] };
     case SPACE_UPDATED: {
       return {
         ...state,
