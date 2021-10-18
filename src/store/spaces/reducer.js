@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
       };
     }
     case SPACE_DETAILS_FETCHED:
-      return { ...state, spaceDetails: { ...payload } };
+      return { ...state, spaceDetails: { ...action.payload } };
     default:
       return state;
   }

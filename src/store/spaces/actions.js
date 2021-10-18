@@ -16,7 +16,7 @@ const spaceDetailsFetched = (space) => ({
 
 export const fetchSpaces = () => {
   return async (dispatch, getState) => {
-    const spacesCount = getState().spaces.length;
+    const spacesCount = getState().spaces.allSpaces.length;
     const response = await axios.get(
       `${apiUrl}/spaces?limit=${DEFAULT_PAGINATION_LIMIT}&offset=${spacesCount}`
     );

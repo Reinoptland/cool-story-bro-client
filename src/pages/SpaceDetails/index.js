@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import Space from "../../components/Space";
 import StoryCarousel from "../../components/StoryCarousel";
 import Container from "react-bootstrap/Container";
-import { fetchSpaceById } from "../../store/spaceDetails/actions";
-import { selectSpaceDetails } from "../../store/spaceDetails/selectors";
+import Loading from "../../components/Loading";
+import { fetchSpaceById } from "../../store/spaces/actions";
+import { selectSpaceDetails } from "../../store/spaces/selectors";
 
 export default function SpaceDetails() {
   const { id } = useParams();
@@ -14,6 +15,8 @@ export default function SpaceDetails() {
   useEffect(() => {
     dispatch(fetchSpaceById(id));
   }, [dispatch, id]);
+
+  if (!space || parseInt(space.id) !== parseInt(id)) return <Loading />;
 
   return (
     <>
