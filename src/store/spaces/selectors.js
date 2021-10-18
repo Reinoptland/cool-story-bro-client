@@ -1,1 +1,3 @@
-export const selectSpaces = state => state.spaces;
+export const selectSpaces = (state) => state.spaces.allSpaces;
+
+export const selectSpaceDetails = (state) => state.spaces.spaceDetails;

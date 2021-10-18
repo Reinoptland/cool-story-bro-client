@@ -1,4 +1,4 @@
-import { FETCH_SPACES_SUCCESS } from "./actions";
+import { FETCH_SPACES_SUCCESS, SPACE_DETAILS_FETCHED } from "./actions";
 import { SPACE_UPDATED } from "../user/actions";
 
 const initialState = { allSpaces: [], spaceDetails: null };
@@ -19,6 +19,8 @@ export default (state = initialState, action) => {
         }),
       };
     }
+    case SPACE_DETAILS_FETCHED:
+      return { ...state, spaceDetails: { ...payload } };
     default:
       return state;
   }
